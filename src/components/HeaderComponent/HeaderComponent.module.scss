@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+.pageHeader {
+  padding: 0 30px;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+  align-items: center;
+  h1 {
+    font-weight: 400;
+    font-size: 2.75em;
+    font-family: "Young Serif", serif;
+  }
+  p {
+    font-family: "Outfit", serif;
+    color: $wenge-brown;
+    font-size: large;
+    font-weight: 400;
+  }
+}
+
+.heading {
+  padding: 0 30px;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+  h2 {
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+    font-size: 2.5em;
+    color: $nutmeg;
+  }
+  p {
+    font-family: "Outfit", serif;
+    color: $wenge-brown;
+    font-size: large;
+    font-weight: 400;
+  }
+}

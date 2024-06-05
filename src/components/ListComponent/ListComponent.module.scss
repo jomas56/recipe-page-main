@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+.listContainer {
+  padding: 30px;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+  ul,
+  ol {
+    padding-left: 15px;
+    margin: 0px;
+  }
+  li {
+    font-family: "Outfit", serif;
+    color: $wenge-brown;
+    font-size: large;
+    font-weight: 400;
+    margin: 15px;
+    padding-left: 15px;
+  }
+  span {
+    font-weight: 600;
+  }
+  li::marker {
+    color: $nutmeg;
+    font-weight: 600;
+  }
+}
