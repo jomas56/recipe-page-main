@@ -1,4 +1,5 @@
 import React from "react";
+import Proptypes from "prop-types";
 import styles from "./ListComponent.module.scss";
 
 const renderListItem = (item, index, hasSpan) => {
@@ -13,7 +14,9 @@ const renderListItem = (item, index, hasSpan) => {
   );
 };
 
-const ListComponent = ({ data, isOrderedList, hasSpan }) => {
+const ListComponent = ({ ...props }) => {
+  const { data, isOrderedList, hasSpan } = props;
+
   return (
     <div className={styles.listContainer}>
       {isOrderedList ? (
@@ -28,13 +31,19 @@ const ListComponent = ({ data, isOrderedList, hasSpan }) => {
         <ul>
           {data
             ? data.map((value, index) => {
-                return renderListItem(value, index, hasSpan);
+                return renderListItem(value, index, data[0].hasSpan);
               })
             : null}
         </ul>
       )}
     </div>
   );
+};
+
+ListComponent.propTypes = {
+  data: Proptypes.array,
+  isOrderedList: Proptypes.bool,
+  hasSpan: Proptypes.bool,
 };
 
 export default ListComponent;

@@ -1,7 +1,9 @@
 import React from "react";
+import Proptypes from "prop-types";
 import styles from "./HeaderComponent.module.scss";
 
-const HeaderComponent = ({ heading, subHeading, variant }) => {
+const HeaderComponent = ({ ...props }) => {
+  const { heading, subHeading, variant } = props;
   return (
     <div
       className={variant === "pageHeader" ? styles.pageHeader : styles.heading}
@@ -12,4 +14,9 @@ const HeaderComponent = ({ heading, subHeading, variant }) => {
   );
 };
 
+HeaderComponent.propTypes = {
+  heading: Proptypes.string,
+  subHeading: Proptypes.string,
+  variant: Proptypes.string,
+};
 export default HeaderComponent;

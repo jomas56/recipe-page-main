@@ -1,4 +1,5 @@
 import React from "react";
+import Proptypes from "prop-types";
 import styles from "./RowTableComponent.module.scss";
 
 const renderTableItem = (label, value, index) => {
@@ -10,7 +11,8 @@ const renderTableItem = (label, value, index) => {
   );
 };
 
-const RowTableComponent = ({ data }) => {
+const RowTableComponent = ({ ...props }) => {
+  const { data } = props;
   return (
     <div className={styles.tableContainer}>
       <table>
@@ -24,4 +26,7 @@ const RowTableComponent = ({ data }) => {
   );
 };
 
+RowTableComponent.propTypes = {
+  data: Proptypes.array,
+};
 export default RowTableComponent;
